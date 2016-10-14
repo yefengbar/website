@@ -560,7 +560,7 @@
 				};
 				wilddog.initializeApp(config);
 				var ref = wilddog.sync().ref('qqlogin');
-				ref.limitToLast(1).on("value",function(snapshot){
+				ref.on("value",function(snapshot){
 					//console.log(snapshot.val());
 				    $.each(snapshot.val(), function(k,v) {
 				    	if(v['sign'] == sign){

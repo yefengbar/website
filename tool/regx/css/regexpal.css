@@ -1,0 +1,88 @@
+/* YUI CSS (c) 2007 Yahoo! Inc.; BSD License */
+/* Reset v2.3.0 */
+
+pre {
+	white-space:pre-wrap;      /* CSS 3 */
+	white-space:-moz-pre-wrap; /* Mozilla */
+	white-space:-o-pre-wrap;   /* Opera */
+	word-wrap:break-word;      /* IE */
+	margin:0;
+	padding:0;
+}
+
+.small       {font-size:90%;}
+.bold        {font-weight:bold;}
+.hidden      {display:none;}
+
+#version     {font-size:80%; font-weight:normal; font-style:italic;}
+#subtitle    {font-size:80%; font-weight:normal;}
+#body        {padding:10px;background: url(http://www.yefengbar.com/mySite/img/foo_bg.png) repeat;}
+#body li     {list-style:circle; list-style-position:inside; margin-left:15px;}
+#footer      {width:100%; text-align:center;}
+#footer p    {margin:0;}
+#copyright   {padding:3px 30px 0; border-top:1px solid #ddd; color:#888; display:inline; position:relative; top:10px;}
+#copyright a {color:#888;}
+#permalink   {color:#00e !important; background:url("./link.gif") left top no-repeat; padding-left:18px; font-weight:bold;}
+
+#nav         {background:#666; float:right; height:32px;}
+#nav li      {float:left;}
+#nav a       {border-right:1px dotted #ccc; color:#fff; display:block; font-weight:bold; line-height:32px; padding:0 11px; text-decoration:none; float:left;}
+#nav a:hover,
+#nav a.here  {background-color:#333;}
+
+#options                    {background:#fdf6ca; height:25px; position:relative; z-index:50; cursor:default;}
+#options input              {vertical-align:middle; margin:-2px 4px 0 0;}
+#options .flag              {font-weight:bold; color:#8f8859; font-size:85%;}
+#options .flag .plain       {font-weight:normal; font-style:italic; color:#444;}
+#options ul                 {margin-left:30px;}
+#options li                 {float:left; line-height:25px; margin-left:12px;}
+#options li.optGroup        {float:right; font-weight:bold; margin:0 8px 0 0; padding:0 5px;}
+#options li.optGroup:hover,
+#options li.hover           {background:#ceb978;}
+#options li ul              {display:none; border-bottom:1px solid #ceb978; position:absolute; top:25px; right:5px;}
+#options li:hover ul,
+#options li.hover ul        {display:block;}
+#options li li              {background:#e3d8a2; border:1px solid #ceb978; border-bottom:0; float:none; margin:0; padding-left:4px; width:178px;}
+
+/* Hacks: IE6 and lower */
+* html #options ul          {margin-left:0; padding-left:15px;}
+* html #options ul ul       {padding:0;}
+* html #options li          {line-height:normal; padding:4px 0;}
+* html #options li.optGroup {padding:4px 5px; height:18px;}
+* html #options li ul       {top:24px; right:16px;}
+
+#quickReference             {background:#fdf6ca;padding:10px;margin-top:10px}
+#quickReference td          {font-size:80%; padding-right:5px;}
+#quickReference p           {font-size:80%; margin:0; text-align:right;}
+#quickReference p a         {color:#95784a;}
+#quickReference p a:hover   {background:#f2eab7;}
+
+#quickReference code        {font-size:110%;}
+table tr.altBg              {background:#f2eab7;}
+
+#search                     {height:60px;}
+#input                      {height:375px;margin-top:10px;}
+.smartField                 {position:relative;padding:0px;overflow:auto;background:none;}
+.smartField pre,
+.smartField textarea        {font:100% "courier new",monospace; width:100%;}
+.smartField pre             {z-index:1; color:#f9f9f9;}
+.smartField textarea        {z-index:2;border:0; background:transparent; position:absolute; top:0; height:100%; min-height:100%; overflow:hidden;}
+
+/* Highlighting ------------------------------------- */
+b, i, u       {font-weight:normal; font-style:normal; text-decoration:none;}
+#input b      {background:#fff000; color:#fff000;}
+#input i      {background:#80c0ff; color:#80c0ff;}
+#search b     {background:#aad1f7; color:#aad1f7;}
+#search i     {background:#f9ca69; color:#f9ca69;}
+#search i b   {background:#f7a700; color:#f7a700;}
+#search i u   {background:#efba4a; color:#efba4a;}
+#search b.g1  {background:#d2f854; color:#d2f854;}
+#search b.g2  {background:#9ec70c; color:#9ec70c;}
+#search b.g3  {background:#ecc9f7; color:#ecc9f7;}
+#search b.g4  {background:#54b70b; color:#54b70b;}
+#search b.g5  {background:#b688cf; color:#b688cf;}
+#search b.err {background:#ff4300 !important; color:#ff4300 !important;}
+
+/*regx_btns*-------------------------------------------*/
+.regx_btns li {display: block;float: left;cursor:pointer;white-space:nowrap;word-break:keep-all;word-wrap:nowrap;padding: 5px 8px;margin:5px 5px 0px 0px;font-size: 12px;background:#fcc24a;color:#fff;line-height: 100%;}
+.regx_btns {padding-bottom: 15px;_padding-bottom:0;*padding-bottom:0}

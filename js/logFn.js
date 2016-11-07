@@ -3,13 +3,14 @@
  * date:2016-10-9 11:05
  * version:0.1.0
  * */
-;(function($, Dom) {
+;(function($) {
 	Hcq = window.Hcq || {};
 	Hcq.logFn = {
 		getPassUrl: 'http://www.yefengbar.com/post.php',
 		getkkUrl: 'http://zc.7k7k.com/get_pre_kk?callback=',
 		chkNameUrl: 'http://www.yefengbar.com/post.php',
 		doLogUrl: 'http://www.yefengbar.com/post.php',
+		doRegUrl_oc:'http://www.yefengbar.com/ocenter/index.php?s=/ucenter/api/register.html',
 		cssUrl: './css/log.css',
 		logDomId: '#union',
 		doMain: 'yefengbar.com',
@@ -87,14 +88,14 @@
 		init: function() {
 			if(location.host != this.doMain) {
 				this.addCSS(Hcq.logFn.cssUrl);
-				logHtml = '<IFRAME id=union_mask src="about:blank" frameBorder=no style="display:none"></IFRAME>' +
+				logHtml = '<IFRAME id=union_mask src="about:blank" frameBorder=no style="display:none;opacity: 0.7;filter:alpha(opacity=70);background:#000"></IFRAME>' +
 					'		<div class="union_warp" id="union" style="display:none">' +
 					'			<div class="un_con">' +
 					'				<div class="un_tit">' +
 					'					<a href="http://web.7k7k.com" target="_blank" class="un_logo"></a>' +
 					'					<div class="un_tabs">' +
-					'						<a href="javascript:;" class="cur">用户登录</a>' +
-					'						<a href="javascript:;">用户注册</a>' +
+					'						<a href="javascript:;" class="cur">登 录</a>' +
+					'						<a href="javascript:;">注 册</a>' +
 					'						<span></span>' +
 					'					</div>' +
 					'					<a href="javascript:;" class="un_close"></a>' +
@@ -315,6 +316,7 @@
 								Hcq.logFn.callBacks();
 								Hcq.logFn.close();
 								Hcq.logFn.showName();
+								
 							} else {
 								layer.msg(data.info)
 							}
@@ -407,12 +409,36 @@
 													break;
 											}
 										}
-										Hcq.logFn.sendEmail(name,pass,email,data.sign)
+										Hcq.logFn.sendEmail(name,pass,email,data.sign);
+										$('body').append('<iframe id="oc_iframe_reg" style="width:100%;height:600px;display:none" src="/ocenter/index.php?s=/ucenter/member/register.html"></iframe>')
 									} else {
 										$('.un_mod_reg .un_tips.repass').html(data.info).addClass('no');
 									}
 								}
 							});
+							//updata ocenter
+							
+							
+//							$.ajax({
+//								type: "post",
+//								url: Hcq.logFn.doRegUrl_oc,
+//								//async: false,
+//								data: {
+//									role:1,
+//									username:email,
+//									reg_type:"email",
+//									nickname:name,
+//									password:pass
+//								},
+//								dataType: "json",
+//								success: function(data) {
+//									if(data.status == 1){
+//										layer.msg('用户中心数据同步成功！')
+//									}else{
+//										layer.msg("用户中心数据同步失败："+data.info)
+//									}
+//								}
+//							});
 						} else {
 							$('.un_mod_reg .un_tips.repass').html(Hcq.logFn.msg[3]).addClass('no');
 						}
@@ -651,7 +677,7 @@
 			})
 		}
 	};
-	(function(window, $) {
+	(function() {
 		Hcq.logFn.init();
 		if(Hcq.logFn.ieVersion() <= 8) {
 			var sw = $(window).width(),
@@ -693,5 +719,5 @@
 				return false;
 			}
 		});
-	}(window, jQuery));
-})(jQuery, window)
+	}());
+})(jQuery)

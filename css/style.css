@@ -48,6 +48,10 @@ input, img, select {
     clear:both;
  overflow: hidden;
  zoom: 1;
+ line-height: 0;
+ font-size: 0;
+ margin:0;
+ padding:0;
 }
 .none {
  display: none;
@@ -61,18 +65,19 @@ input, img, select {
 ----------------------------------------------- */
 body {background:url(../img/bg.jpg) no-repeat center top fixed #fff;background-size: cover}
 .warper {width:100%;height:100%}
-.mwarp {width:1123px;margin:0 auto;}
+.mwarp {width:1140px;margin:0 auto;}
 .mart15 {margin-top:15px;}
 .mart12 {margin-top:12px;}
+.marl10 {margin-left:10px;}
 .marl12 {margin-left:12px;}
 .marl15 {margin-left:15px;}
 .marl20 {margin-left:20px;}
-.mod320 {width:323px}
+.mod320 {width:300px}
 .mod350 {width:353px}
-.mod420 {width:423px}
-.mod755 {width:758px}
-.mod785 {width:788px}
-.mod1120 {width:1123px}
+.mod420 {width:463px}
+.mod755 {width:775px}
+.mod785 {width:830px}
+.mod1120 {width:100%}
 /* 头部导航
 ----------------------------------------------- */
 #header {width:100%;height:66px;background:url(../img/topBar_bg.png) repeat-x;position:fixed;top:0;z-index: 99999}
@@ -86,44 +91,48 @@ body {background:url(../img/bg.jpg) no-repeat center top fixed #fff;background-s
 #header ul li.wap {background: url(../img/i_app.png) no-repeat left center} 
 #header ul li.log {background: url(../img/i_user.png) no-repeat left center} 
 /* -- mod -- */
-.modt320 {width:100%;height:3px;background: url(../img/d_t_320.png) no-repeat left bottom}
-.modr320 {background: url(../img/d_r_320.png) repeat-y left top;padding:15px 21px 15px 18px}
-.modb320 {width:100%;height:4px;background: url(../img/d_b_320.png) no-repeat left top}
-.modt350 {width:100%;height:3px;background: url(../img/d_t_350.png) no-repeat left bottom}
-.modr350 {background: url(../img/d_r_350.png) repeat-y left top;padding:15px 21px 15px 18px}
-.modb350 {width:100%;height:4px;background: url(../img/d_b_350.png) no-repeat left top}
-.modt420 {width:100%;height:3px;background: url(../img/d_t_420.png) no-repeat left bottom}
-.modr420 {background: url(../img/d_r_420.png) repeat-y left top;padding:15px 21px 15px 18px}
-.modb420 {width:100%;height:4px;background: url(../img/d_b_420.png) no-repeat left top}
-.modt755 {width:100%;height:3px;background: url(../img/d_t_755.png) no-repeat left bottom}
-.modr755 {background: url(../img/d_r_755.png) repeat-y left top;padding:15px 21px 15px 18px}
-.modb755 {width:100%;height:4px;background: url(../img/d_b_755.png) no-repeat left top}
-.modt785 {width:100%;height:3px;background: url(../img/d_t_785.png) no-repeat left bottom}
-.modr785 {background: url(../img/d_r_785.png) repeat-y left top;padding:15px 21px 15px 18px}
-.modb785 {width:100%;height:4px;background: url(../img/d_b_785.png) no-repeat left top}
-.modt1120 {width:100%;height:3px;background: url(../img/d_t_1120.png) no-repeat left bottom}
-.modr1120 {background: url(../img/d_r_1120.png) repeat-y left top;padding:15px 21px 15px 18px}
-.modb1120 {width:100%;height:4px;background: url(../img/d_b_1120.png) no-repeat left top}
+.modt320 {width:100%;height:3px;/*background: url(../img/d_t_320.png) no-repeat left bottom*/}
+.modr320 {/*background: url(../img/d_r_320.png) repeat-y left top;*/padding:12px;*padding:12px 12px 6px 12px}
+.modb320 {width:100%;height:4px;/*background: url(../img/d_b_320.png) no-repeat left top*/}
+.modt350 {width:100%;height:3px;/*background: url(../img/d_t_350.png) no-repeat left bottom*/}
+.modr350 {/*background: url(../img/d_r_350.png) repeat-y left top;*/padding:12px;*padding:12px 12px 6px 12px}
+.modb350 {width:100%;height:4px;/*background: url(../img/d_b_350.png) no-repeat left top*/}
+.modt420 {width:100%;height:3px;/*background: url(../img/d_t_420.png) no-repeat left bottom*/}
+.modr420 {/*background: url(../img/d_r_420.png) repeat-y left top;*/padding:12px;*padding:12px 12px 6px 12px}
+.modb420 {width:100%;height:4px;/*background: url(../img/d_b_420.png) no-repeat left top*/}
+.modt755 {width:100%;height:3px;/*background: url(../img/d_t_755.png) no-repeat left bottom*/}
+.modr755 {/*background: url(../img/d_r_755.png) repeat-y left top;*/padding:12px;*padding:12px 12px 6px 12px}
+.modb755 {width:100%;height:4px;/*background: url(../img/d_b_755.png) no-repeat left top*/}
+.modt785 {width:100%;height:3px;/*background: url(../img/d_t_785.png) no-repeat left bottom*/}
+.modr785 {/*background: url(../img/d_r_785.png) repeat-y left top;*/padding:12px;*padding:12px 12px 6px 12px}
+.modb785 {width:100%;height:4px;/*background: url(../img/d_b_785.png) no-repeat left top*/}
+.modt1120 {width:100%;height:3px;/*background: url(../img/d_t_1120.png) no-repeat left bottom*/}
+.modr1120 {/*background: url(../img/d_r_1120.png) repeat-y left top;*/padding:12px;*padding:12px 12px 6px 12px}
+.modb1120 {width:100%;height:4px;/*background: url(../img/d_b_1120.png) no-repeat left top*/}
 .modTit {padding-left: 18px;height:28px;background: url(../img/mod_icon.png) no-repeat left top;}
 .modTit h2 {display: block;width:70%;float: left;}
 .modTit h2 .mtit {font-size: 16px;color:#666;line-height: 100%}
 .modTit .more {width:27px;float: right;color:#999;line-height: 100%}
 
+/*fixbackground*/
+.mod320,.mod350,.mod420,.mod755,.mod785,.mod1120 {background: url(../img/foo_bg.png) repeat}
+
 /*container*/
 #container {padding-top:82px}
 /*nav*/
-.nav {width:100%;height:39px;background: url(../img/mnav.png) no-repeat}
+.nav {width:100%;height:40px;background: url(../img/foo_bg.png) repeat}
 
 .nav .micon {float: left;margin-left:15px; width:32px;height:39px;background: url(../img/dh_icon.png) no-repeat left center}
-.nav .mnav {float: left; width:1026px;height:39px;}
+.nav .mnav {float: left; width:1046px;height:39px;}
 .nav .mnav ul {display: block;width:921px;height:39px;margin:0 auto;}
 .nav .mnav ul li {display: block;float:left;padding:0 30px 0 28px;height:39px;background: url(../img/n_line.png) no-repeat right center}
 .nav .mnav ul li.last {background: none}
 .nav .mnav ul li a {font-size: 15px;line-height: 39px;}
 .nav .msearch {float: right;margin-right:15px; width:32px;height:39px;background: url(../img/search.png) no-repeat left center}
 /*tools*/
-.tools {width:323px;height:258px;}
-.tools_a a {display: block;width:93px;height:75px;float:left;text-align: center;font-size: 12px;line-height: 25px;}
+.tools {width:300px;}
+.tools,.flash,.news {height: 249px;overflow: hidden;}
+.tools_a a {display: block;width:92px;height:75px;float:left;text-align: center;font-size: 12px;line-height: 25px;}
 .tools_a i {display: block;width:45px;height:45px;margin:0 24px;}
 .tools_a .tl1 i {background: url(../img/sprit_tools.png) no-repeat left top}
 .tools_a .tl2 i {background: url(../img/sprit_tools.png) no-repeat -45px top}
@@ -145,19 +154,21 @@ body {background:url(../img/bg.jpg) no-repeat center top fixed #fff;background-s
 .tools_a .tl8:hover i {background: url(../img/sprit_tools_h.png) no-repeat -45px -90px}
 .tools_a .tl9:hover i {background: url(../img/sprit_tools_h.png) no-repeat -90px -90px}
 /*flash*/
-.flashs {position:relative;height: 224px;overflow:hidden}
+.flashs {position:relative;width:439px;height: 224px;}
 #slideshow li {position: absolute;left:0;top:0;}
-#slidenum {position:absolute;width:350px;height:6px;bottom:18px;left:20px;z-index: 10}
-#slidenum li {float:left;margin-right:3px;width:22px;height:4px;background:#8c8e94;border:1px solid #8c8e94;color:#666;overflow:hidden;text-indent:100px;}
-#slidenum li:hover,#slidenum li.cur {width:22px;height:4px;background:#f7bb56;border:1px solid #f7bb56;color:#fff;}
+#slidenum {position:absolute;width:132px;height:6px;bottom:-12px;left:150px;z-index: 10}
+#slidenum li {float:left;margin-right:3px;width:30px;height:2px;background:#8c8e94;border:0px solid #8c8e94;color:#666;overflow:hidden;text-indent:100px;}
+#slidenum li:hover,#slidenum li.cur {width:30px;height:2px;background:#f7bb56;border:0px solid #f7bb56;color:#fff;}
+#slidenum li img {}
 /*news*/
-.newsLi li {height:28px;overflow: hidden}
-.newsLi li a ,.newsLi li span {display: block;height:28px;line-height: 28px}
+.newsLi li {height:28px;*height:25px;overflow: hidden}
+.newsLi li a ,.newsLi li span {display: block;height:28px;line-height: 28px;*height:25px;*line-height:25px;}
 .newsLi li a {width:70%;float: left;color:#333;}
-.newsLi li span {width:37px;float: right;color:#666;}
+.newsLi li span {width:37px;float: right;color:#666;white-space:nowrap;height:28px;line-height: 28px;*height:25px;*line-height:25px;}
 
 /*commend*/
-/*.commend {width:758px;}*/
+.commend,.active {height:194px;overflow: hidden;}
+
 .active {width:353px;}
 .commend .commends li {float: left;width:164px;height:170px;}
 .commend .commends li img {display: block;width:100%}
@@ -168,7 +179,7 @@ body {background:url(../img/bg.jpg) no-repeat center top fixed #fff;background-s
 .commend .commends li .cm_info p {font-size: 12px; color:#666}
 
 /*news*/
-.nlist .list3 {width:348px;float: left}
+.nlist .list3 {width:354px;float: left}
 
 /*links*/
 .links .yqlj li {float: left;padding:5px}

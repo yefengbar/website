@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>regex</title>
+		<link rel="stylesheet" type="text/css" href="css/regexpal.css" />
+	</head>
+
+	<body>
+		<div id="options">
+			<ul>
+				<li><input id="flagG" type="checkbox" checked="checked"><label for="flagG">全局匹配</label> <span class="flag">(g)</span></li>
+				<li><input id="flagI" type="checkbox"><label for="flagI">不区分大小写的匹配</label> <span class="flag">(i)</span></li>
+				<li><input id="flagM" type="checkbox"><label for="flagM">将字符串视为多行,不管是那行都能匹配</label> <span class="flag">(m)</span></li>
+				<li><input id="flagS" type="checkbox"><label for="flagS">将字符串视为单行,换行符作为普通字符</label> <span class="flag">(s)</span>
+				</li>
+			</ul>
+			<ul>
+				<li><input id="highlightSyntax" type="checkbox" checked="checked"><label for="highlightSyntax">Highlight regex syntax</label></li>
+				<li><input id="highlightMatches" type="checkbox" checked="checked"><label for="highlightMatches">Highlight matches</label></li>
+				<li><input id="invertMatches" type="checkbox"><label for="invertMatches" title="Highlight any text not matched by the regex">Invert results</label></li>
+			</ul>
+		</div>
+		<div id="body">
+			<div id="search" class="smartField">
+				<textarea cols="100" rows="2" tabindex="1" spellcheck="false" id="searchText">填写正则表达式</textarea>
+			</div>
+			<div id="input" class="smartField">
+				<textarea cols="100" rows="50" tabindex="2" spellcheck="false" id="inputText">qweqweqweertert<br>123435123123
+				dfg34wsdf234sdf234sdf34sdf
+				123@123.com
+				718063475
+				15511653215
+				但分开了各级地方立刻感觉
+				172.0.0.1
+				http://www.baidu.com
+				www.baidu.com
+				100089
+				</textarea>
+			</div>
+		</div>
+
+		<div id="quickReference">
+			<h2>JavaScript 正则语义简单示意</h2>
+			<table cellspacing="0">
+				<tbody>
+					<tr>
+						<td><code>.</code></td>
+						<td>Any character except newline.</td>
+					</tr>
+					<tr class="altBg">
+						<td><code>\.</code></td>
+						<td>A period (and so on for <code>\*</code>, <code>\(</code>, <code>\\</code>, etc.)</td>
+					</tr>
+					<tr>
+						<td><code>^</code></td>
+						<td>The start of the string.</td>
+					</tr>
+					<tr class="altBg">
+						<td><code>$</code></td>
+						<td>The end of the string.</td>
+					</tr>
+					<tr>
+						<td><code>\d</code>,<code>\w</code>,<code>\s</code></td>
+						<td>A digit, word character <code>[A-Za-z0-9_]</code>, or whitespace.</td>
+					</tr>
+					<tr class="altBg">
+						<td><code>\D</code>,<code>\W</code>,<code>\S</code></td>
+						<td>Anything except a digit, word character, or whitespace.</td>
+					</tr>
+					<tr>
+						<td><code>[abc]</code></td>
+						<td>Character a, b, or c.</td>
+					</tr>
+					<tr class="altBg">
+						<td><code>[a-z]</code></td>
+						<td>a through z.</td>
+					</tr>
+					<tr>
+						<td><code>[^abc]</code></td>
+						<td>Any character except a, b, or c.</td>
+					</tr>
+					<tr class="altBg">
+						<td><code>aa|bb</code></td>
+						<td>Either aa or bb.</td>
+					</tr>
+					<tr>
+						<td><code>?</code></td>
+						<td>Zero or one of the preceding element.</td>
+					</tr>
+					<tr class="altBg">
+						<td><code>*</code></td>
+						<td>Zero or more of the preceding element.</td>
+					</tr>
+					<tr>
+						<td><code>+</code></td>
+						<td>One or more of the preceding element.</td>
+					</tr>
+					<tr class="altBg">
+						<td><code>{<em>n</em>}</code></td>
+						<td>Exactly <em>n</em> of the preceding element.</td>
+					</tr>
+					<tr>
+						<td><code>{<em>n</em>,}</code></td>
+						<td><em>n</em> or more of the preceding element.</td>
+					</tr>
+					<tr class="altBg">
+						<td><code>{<em>m</em>,<em>n</em>}</code></td>
+						<td>Between <em>m</em> and <em>n</em> of the preceding element.</td>
+					</tr>
+					<tr>
+						<td><code>??</code>,<code>*?</code>,<code>+?</code>,<br><code>{<em>n</em>}?</code>, etc.</td>
+						<td>Same as above, but as few as possible.</td>
+					</tr>
+					<tr class="altBg">
+						<td><code>(</code><em>expr</em><code>)</code></td>
+						<td>Capture <em>expr</em> for use with <code>\1</code>, etc.</td>
+					</tr>
+					<tr>
+						<td><code>(?:</code><em>expr</em><code>)</code></td>
+						<td>Non-capturing group.</td>
+					</tr>
+					<tr class="altBg">
+						<td><code>(?=</code><em>expr</em><code>)</code></td>
+						<td>Followed by <em>expr</em>.</td>
+					</tr>
+					<tr>
+						<td><code>(?!</code><em>expr</em><code>)</code></td>
+						<td>Not followed by <em>expr</em>.</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<script src="./js/xregexp.js"></script>
+		<script src="./js/helpers.js"></script>
+		<script src="./js/regexpal.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>RGB与16进制色互转</title>
+<meta name="keywords" content="RGB与16进制色互转">
+<meta name="description" content="RGB与16进制色互转，颜色转换">
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+#rgba-container td{ padding:3px 0;}
+#rgba-container table tr:not(:first-child) td:first-child{ text-align:right;}
+/*#rgba-container input{ height:30px !important; line-height:30px !important; text-indent:8px; font-size:16px; font-weight:bold; color:#007FF4;}*/
+#rgba-rgba-container,
+#rgba-16x-container{ float:left;}
+#rgba-16x-container{ margin-left:80px;}
+#rgba-preview{ background-color:#fff; width:100px; height:100px; margin-top:10px; font-size:12px; line-height:170px; text-align:center; overflow:hidden;}
+#rgba-rgba-container input{ width:50px;}
+#rgba-16x-container input{ width:150px;}
+#named-color-table{ border-collapse:separate;width: 100%;}
+#named-color-table td,
+#named-color-table th{ text-align:left; height:16px; padding:0 10px;}
+#named-color-table tr td:first-child{ width:40px;}
+#named-color-table tr td:nth-child(2){ font-weight:bold;}
+#named-color-table tr:hover{ background-color:#FFF9C3;}
+    .clear {clear:both}
+</style>
+</head>
+<body>
+<div class="warper warp">
+			<div id="header">
+				<div class="mwarp">
+					<h1><a href="http://www.yefengbar.com" title="叶枫酒吧前端开发工作室"><img src="./img/logo.png" height="65" alt="叶枫酒吧前端开发工作室" /></a></h1>
+					<ul>
+						<li class="fav">
+							<a href="javascript:;" onclick="" title="收藏本站">收藏本站</a>
+						</li>
+						<li class="book">
+							<a href="javascript:;" title="留言" target="_blank">留言</a>
+						</li>
+						<li class="wap">
+							<a href="javascript:;" title="手机版" target="_blank">手机版</a>
+						</li>
+						<li class="log">
+							<a href="javascript:;" onclick="" title="登录|注册">登录 | 注册</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="container">
+				<div class="mwarp">
+					<div class="nav">
+						<div class="micon"></div>
+						<div class="mnav">
+							<ul>
+								<li>
+									<a href="">首页</a>
+								</li>
+								<li>
+									<a href="">前端开发</a>
+								</li>
+								<li>
+									<a href="">开发工具</a>
+								</li>
+								<li>
+									<a href="">码农关注</a>
+								</li>
+								<li>
+									<a href="">前端驿站</a>
+								</li>
+								<li>
+									<a href="">前段周边</a>
+								</li>
+								<li>
+									<a href="">我的创想</a>
+								</li>
+								<li class="last">
+									<a href="">关于我们</a>
+								</li>
+							</ul>
+						</div>
+						<div class="msearch"></div>
+					</div>
+					<div class="levs mart15">
+						<div class="ls_l fl">
+							<div class="commend mod785">
+								<div class="modt785"></div>
+								<div class="modr785">
+									<div id="article">
+										<div class="urHere">当前位置：
+											<a href="http://www.yefengbar.com/">rgb</a><b>&gt;</b></div>
+										<h1>RGB与16进制色互转</h1>
+										<div class="info"></div>
+										<div class="content fpass">
+											<!--rgb-->
+											<div id="rgba-container">
+												<table id="rgba-rgba-container">
+											    	<tbody><tr><td colspan="2" style="font-weight:bold; font-size:24px;">RGB</td></tr>
+											    	<tr><td><span style="font-weight:bold; font-size:16px;">R</span> 红色（0~255）：</td><td><input type="text" class="text" value="0"></td></tr>
+											        <tr><td><span style="font-weight:bold; font-size:16px;">G</span> 绿色（0~255）：</td><td><input type="text" class="text" value="0"></td></tr>
+											        <tr><td><span style="font-weight:bold; font-size:16px;">B</span> 蓝色（0~255）：</td><td><input type="text" class="text" value="0"></td></tr>
+											        <tr><td colspan="2" style="color:green;">注：网页的透明度是0~1<br>下面用于 C#、Android 等程序</td></tr>
+											        <tr><td><span style="font-weight:bold; font-size:16px;">A</span> 透明度（0~255，可选）：</td><td><input type="text" class="text" value=""></td></tr>
+											    </tbody></table>
+											    <table id="rgba-16x-container">
+											    	<tbody><tr><td colspan="2" style="font-weight:bold; font-size:24px;">16x</td></tr>
+											    	<tr><td>字符（6或8位）：</td><td><input type="text" class="text" value="#000"></td></tr>
+											        <tr><td></td><td><div id="rgba-preview"><div id="rgba-preview-box">预览</div></div></td></tr>
+											    </tbody></table>
+											    <br class="clear">
+											    <div class="clear"></div>
+											    <h2 style="font-weight:bold; font-size:24px;padding:40px 0 20px 0">颜色名称与RGB值对照表</h2>
+											    <table id="named-color-table">
+													<thead>
+														<tr><th>View&nbsp;</th><th>Color&nbsp;name</th><th>Hex&nbsp;rgb</th><th>Decimal</th></tr></thead>
+											        <tbody>
+														<tr>
+															<td style="background:aliceblue"></td><td>aliceblue</td><td>#f0f8ff</td><td>240,248,255</td></tr><tr>
+															<td style="background:antiquewhite"></td><td>antiquewhite</td><td>#faebd7</td><td>250,235,215</td></tr><tr>
+															<td style="background:aqua"></td><td>aqua</td><td>#00ffff</td><td>0,255,255</td></tr><tr>
+															<td style="background:aquamarine"></td><td>aquamarine</td><td>#7fffd4</td><td>127,255,212</td></tr><tr>
+															<td style="background:azure"></td><td>azure</td><td>#f0ffff</td><td>240,255,255</td></tr><tr>
+															<td style="background:beige"></td><td>beige</td><td>#f5f5dc</td><td>245,245,220</td></tr><tr>
+															<td style="background:bisque"></td><td>bisque</td><td>#ffe4c4</td><td>255,228,196</td></tr><tr>
+															<td style="background:black"></td><td>black</td><td>#000000</td><td>0,0,0</td></tr><tr>
+															<td style="background:blanchedalmond"></td><td>blanchedalmond</td><td>#ffebcd</td><td>255,235,205</td></tr><tr>
+															<td style="background:blue"></td><td>blue</td><td>#0000ff</td><td>0,0,255</td></tr><tr>
+															<td style="background:blueviolet"></td><td>blueviolet</td><td>#8a2be2</td><td>138,43,226</td></tr><tr>
+															<td style="background:brown"></td><td>brown</td><td>#a52a2a</td><td>165,42,42</td></tr><tr>
+															<td style="background:burlywood"></td><td>burlywood</td><td>#deb887</td><td>222,184,135</td></tr><tr>
+															<td style="background:cadetblue"></td><td>cadetblue</td><td>#5f9ea0</td><td>95,158,160</td></tr><tr>
+															<td style="background:chartreuse"></td><td>chartreuse</td><td>#7fff00</td><td>127,255,0</td></tr><tr>
+															<td style="background:chocolate"></td><td>chocolate</td><td>#d2691e</td><td>210,105,30</td></tr><tr>
+															<td style="background:coral"></td><td>coral</td><td>#ff7f50</td><td>255,127,80</td></tr><tr>
+															<td style="background:cornflowerblue"></td><td>cornflowerblue</td><td>#6495ed</td><td>100,149,237</td></tr><tr>
+															<td style="background:cornsilk"></td><td>cornsilk</td><td>#fff8dc</td><td>255,248,220</td></tr><tr>
+															<td style="background:crimson"></td><td>crimson</td><td>#dc143c</td><td>220,20,60</td></tr><tr>
+															<td style="background:cyan"></td><td>cyan</td><td>#00ffff</td><td>0,255,255</td></tr><tr>
+															<td style="background:darkblue"></td><td>darkblue</td><td>#00008b</td><td>0,0,139</td></tr><tr>
+															<td style="background:darkcyan"></td><td>darkcyan</td><td>#008b8b</td><td>0,139,139</td></tr><tr>
+															<td style="background:darkgoldenrod"></td><td>darkgoldenrod</td><td>#b8860b</td><td>184,134,11</td></tr><tr>
+															<td style="background:darkgray"></td><td>darkgray</td><td>#a9a9a9</td><td>169,169,169</td></tr><tr>
+															<td style="background:darkgreen"></td><td>darkgreen</td><td>#006400</td><td>0,100,0</td></tr><tr>
+															<td style="background:darkgrey"></td><td>darkgrey</td><td>#a9a9a9</td><td>169,169,169</td></tr><tr>
+															<td style="background:darkkhaki"></td><td>darkkhaki</td><td>#bdb76b</td><td>189,183,107</td></tr><tr>
+															<td style="background:darkmagenta"></td><td>darkmagenta</td><td>#8b008b</td><td>139,0,139</td></tr><tr>
+															<td style="background:darkolivegreen"></td><td>darkolivegreen</td><td>#556b2f</td><td>85,107,47</td></tr><tr>
+															<td style="background:darkorange"></td><td>darkorange</td><td>#ff8c00</td><td>255,140,0</td></tr><tr>
+															<td style="background:darkorchid"></td><td>darkorchid</td><td>#9932cc</td><td>153,50,204</td></tr><tr>
+															<td style="background:darkred"></td><td>darkred</td><td>#8b0000</td><td>139,0,0</td></tr><tr>
+															<td style="background:darksalmon"></td><td>darksalmon</td><td>#e9967a</td><td>233,150,122</td></tr><tr>
+															<td style="background:darkseagreen"></td><td>darkseagreen</td><td>#8fbc8f</td><td>143,188,143</td></tr><tr>
+															<td style="background:darkslateblue"></td><td>darkslateblue</td><td>#483d8b</td><td>72,61,139</td></tr><tr>
+															<td style="background:darkslategray"></td><td>darkslategray</td><td>#2f4f4f</td><td>47,79,79</td></tr><tr>
+															<td style="background:darkslategrey"></td><td>darkslategrey</td><td>#2f4f4f</td><td>47,79,79</td></tr><tr>
+															<td style="background:darkturquoise"></td><td>darkturquoise</td><td>#00ced1</td><td>0,206,209</td></tr><tr>
+															<td style="background:darkviolet"></td><td>darkviolet</td><td>#9400d3</td><td>148,0,211</td></tr><tr>
+															<td style="background:deeppink"></td><td>deeppink</td><td>#ff1493</td><td>255,20,147</td></tr><tr>
+															<td style="background:deepskyblue"></td><td>deepskyblue</td><td>#00bfff</td><td>0,191,255</td></tr><tr>
+															<td style="background:dimgray"></td><td>dimgray</td><td>#696969</td><td>105,105,105</td></tr><tr>
+															<td style="background:dimgrey"></td><td>dimgrey</td><td>#696969</td><td>105,105,105</td></tr><tr>
+															<td style="background:dodgerblue"></td><td>dodgerblue</td><td>#1e90ff</td><td>30,144,255</td></tr><tr>
+															<td style="background:firebrick"></td><td>firebrick</td><td>#b22222</td><td>178,34,34</td></tr><tr>
+															<td style="background:floralwhite"></td><td>floralwhite</td><td>#fffaf0</td><td>255,250,240</td></tr><tr>
+															<td style="background:forestgreen"></td><td>forestgreen</td><td>#228b22</td><td>34,139,34</td></tr><tr>
+															<td style="background:fuchsia"></td><td>fuchsia</td><td>#ff00ff</td><td>255,0,255</td></tr><tr>
+															<td style="background:gainsboro"></td><td>gainsboro</td><td>#dcdcdc</td><td>220,220,220</td></tr><tr>
+															<td style="background:ghostwhite"></td><td>ghostwhite</td><td>#f8f8ff</td><td>248,248,255</td></tr><tr>
+															<td style="background:gold"></td><td>gold</td><td>#ffd700</td><td>255,215,0</td></tr><tr>
+															<td style="background:goldenrod"></td><td>goldenrod</td><td>#daa520</td><td>218,165,32</td></tr><tr>
+															<td style="background:gray"></td><td>gray</td><td>#808080</td><td>128,128,128</td></tr><tr>
+															<td style="background:green"></td><td>green</td><td>#008000</td><td>0,128,0</td></tr><tr>
+															<td style="background:greenyellow"></td><td>greenyellow</td><td>#adff2f</td><td>173,255,47</td></tr><tr>
+															<td style="background:grey"></td><td>grey</td><td>#808080</td><td>128,128,128</td></tr><tr>
+															<td style="background:honeydew"></td><td>honeydew</td><td>#f0fff0</td><td>240,255,240</td></tr><tr>
+															<td style="background:hotpink"></td><td>hotpink</td><td>#ff69b4</td><td>255,105,180</td></tr><tr>
+															<td style="background:indianred"></td><td>indianred</td><td>#cd5c5c</td><td>205,92,92</td></tr><tr>
+															<td style="background:indigo"></td><td>indigo</td><td>#4b0082</td><td>75,0,130</td></tr><tr>
+															<td style="background:ivory"></td><td>ivory</td><td>#fffff0</td><td>255,255,240</td></tr><tr>
+															<td style="background:khaki"></td><td>khaki</td><td>#f0e68c</td><td>240,230,140</td></tr><tr>
+															<td style="background:lavender"></td><td>lavender</td><td>#e6e6fa</td><td>230,230,250</td></tr><tr>
+															<td style="background:lavenderblush"></td><td>lavenderblush</td><td>#fff0f5</td><td>255,240,245</td></tr><tr>
+															<td style="background:lawngreen"></td><td>lawngreen</td><td>#7cfc00</td><td>124,252,0</td></tr><tr>
+															<td style="background:lemonchiffon"></td><td>lemonchiffon</td><td>#fffacd</td><td>255,250,205</td></tr><tr>
+															<td style="background:lightblue"></td><td>lightblue</td><td>#add8e6</td><td>173,216,230</td></tr><tr>
+															<td style="background:lightcoral"></td><td>lightcoral</td><td>#f08080</td><td>240,128,128</td></tr><tr>
+															<td style="background:lightcyan"></td><td>lightcyan</td><td>#e0ffff</td><td>224,255,255</td></tr><tr>
+															<td style="background:lightgoldenrodyellow"></td><td>lightgoldenrodyellow</td><td>#fafad2</td><td>250,250,210</td></tr><tr>
+															<td style="background:lightgray"></td><td>lightgray</td><td>#d3d3d3</td><td>211,211,211</td></tr><tr>
+															<td style="background:lightgreen"></td><td>lightgreen</td><td>#90ee90</td><td>144,238,144</td></tr><tr>
+															<td style="background:lightgrey"></td><td>lightgrey</td><td>#d3d3d3</td><td>211,211,211</td></tr><tr>
+															<td style="background:lightpink"></td><td>lightpink</td><td>#ffb6c1</td><td>255,182,193</td></tr><tr>
+															<td style="background:lightsalmon"></td><td>lightsalmon</td><td>#ffa07a</td><td>255,160,122</td></tr><tr>
+															<td style="background:lightseagreen"></td><td>lightseagreen</td><td>#20b2aa</td><td>32,178,170</td></tr><tr>
+															<td style="background:lightskyblue"></td><td>lightskyblue</td><td>#87cefa</td><td>135,206,250</td></tr><tr>
+															<td style="background:lightslategray"></td><td>lightslategray</td><td>#778899</td><td>119,136,153</td></tr><tr>
+															<td style="background:lightslategrey"></td><td>lightslategrey</td><td>#778899</td><td>119,136,153</td></tr><tr>
+															<td style="background:lightsteelblue"></td><td>lightsteelblue</td><td>#b0c4de</td><td>176,196,222</td></tr><tr>
+															<td style="background:lightyellow"></td><td>lightyellow</td><td>#ffffe0</td><td>255,255,224</td></tr><tr>
+															<td style="background:lime"></td><td>lime</td><td>#00ff00</td><td>0,255,0</td></tr><tr>
+															<td style="background:limegreen"></td><td>limegreen</td><td>#32cd32</td><td>50,205,50</td></tr><tr>
+															<td style="background:linen"></td><td>linen</td><td>#faf0e6</td><td>250,240,230</td></tr><tr>
+															<td style="background:magenta"></td><td>magenta</td><td>#ff00ff</td><td>255,0,255</td></tr><tr>
+															<td style="background:maroon"></td><td>maroon</td><td>#800000</td><td>128,0,0</td></tr><tr>
+															<td style="background:mediumaquamarine"></td><td>mediumaquamarine</td><td>#66cdaa</td><td>102,205,170</td></tr><tr>
+															<td style="background:mediumblue"></td><td>mediumblue</td><td>#0000cd</td><td>0,0,205</td></tr><tr>
+															<td style="background:mediumorchid"></td><td>mediumorchid</td><td>#ba55d3</td><td>186,85,211</td></tr><tr>
+															<td style="background:mediumpurple"></td><td>mediumpurple</td><td>#9370db</td><td>147,112,219</td></tr><tr>
+															<td style="background:mediumseagreen"></td><td>mediumseagreen</td><td>#3cb371</td><td>60,179,113</td></tr><tr>
+															<td style="background:mediumslateblue"></td><td>mediumslateblue</td><td>#7b68ee</td><td>123,104,238</td></tr><tr>
+															<td style="background:mediumspringgreen"></td><td>mediumspringgreen</td><td>#00fa9a</td><td>0,250,154</td></tr><tr>
+															<td style="background:mediumturquoise"></td><td>mediumturquoise</td><td>#48d1cc</td><td>72,209,204</td></tr><tr>
+															<td style="background:mediumvioletred"></td><td>mediumvioletred</td><td>#c71585</td><td>199,21,133</td></tr><tr>
+															<td style="background:midnightblue"></td><td>midnightblue</td><td>#191970</td><td>25,25,112</td></tr><tr>
+															<td style="background:mintcream"></td><td>mintcream</td><td>#f5fffa</td><td>245,255,250</td></tr><tr>
+															<td style="background:mistyrose"></td><td>mistyrose</td><td>#ffe4e1</td><td>255,228,225</td></tr><tr>
+															<td style="background:moccasin"></td><td>moccasin</td><td>#ffe4b5</td><td>255,228,181</td></tr><tr>
+															<td style="background:navajowhite"></td><td>navajowhite</td><td>#ffdead</td><td>255,222,173</td></tr><tr>
+															<td style="background:navy"></td><td>navy</td><td>#000080</td><td>0,0,128</td></tr><tr>
+															<td style="background:oldlace"></td><td>oldlace</td><td>#fdf5e6</td><td>253,245,230</td></tr><tr>
+															<td style="background:olive"></td><td>olive</td><td>#808000</td><td>128,128,0</td></tr><tr>
+															<td style="background:olivedrab"></td><td>olivedrab</td><td>#6b8e23</td><td>107,142,35</td></tr><tr>
+															<td style="background:orange"></td><td>orange</td><td>#ffa500</td><td>255,165,0</td></tr><tr>
+															<td style="background:orangered"></td><td>orangered</td><td>#ff4500</td><td>255,69,0</td></tr><tr>
+															<td style="background:orchid"></td><td>orchid</td><td>#da70d6</td><td>218,112,214</td></tr><tr>
+															<td style="background:palegoldenrod"></td><td>palegoldenrod</td><td>#eee8aa</td><td>238,232,170</td></tr><tr>
+															<td style="background:palegreen"></td><td>palegreen</td><td>#98fb98</td><td>152,251,152</td></tr><tr>
+															<td style="background:paleturquoise"></td><td>paleturquoise</td><td>#afeeee</td><td>175,238,238</td></tr><tr>
+															<td style="background:palevioletred"></td><td>palevioletred</td><td>#db7093</td><td>219,112,147</td></tr><tr>
+															<td style="background:papayawhip"></td><td>papayawhip</td><td>#ffefd5</td><td>255,239,213</td></tr><tr>
+															<td style="background:peachpuff"></td><td>peachpuff</td><td>#ffdab9</td><td>255,218,185</td></tr><tr>
+															<td style="background:peru"></td><td>peru</td><td>#cd853f</td><td>205,133,63</td></tr><tr>
+															<td style="background:pink"></td><td>pink</td><td>#ffc0cb</td><td>255,192,203</td></tr><tr>
+															<td style="background:plum"></td><td>plum</td><td>#dda0dd</td><td>221,160,221</td></tr><tr>
+															<td style="background:powderblue"></td><td>powderblue</td><td>#b0e0e6</td><td>176,224,230</td></tr><tr>
+															<td style="background:purple"></td><td>purple</td><td>#800080</td><td>128,0,128</td></tr><tr>
+															<td style="background:red"></td><td>red</td><td>#ff0000</td><td>255,0,0</td></tr><tr>
+															<td style="background:rosybrown"></td><td>rosybrown</td><td>#bc8f8f</td><td>188,143,143</td></tr><tr>
+															<td style="background:royalblue"></td><td>royalblue</td><td>#4169e1</td><td>65,105,225</td></tr><tr>
+															<td style="background:saddlebrown"></td><td>saddlebrown</td><td>#8b4513</td><td>139,69,19</td></tr><tr>
+															<td style="background:salmon"></td><td>salmon</td><td>#fa8072</td><td>250,128,114</td></tr><tr>
+															<td style="background:sandybrown"></td><td>sandybrown</td><td>#f4a460</td><td>244,164,96</td></tr><tr>
+															<td style="background:seagreen"></td><td>seagreen</td><td>#2e8b57</td><td>46,139,87</td></tr><tr>
+															<td style="background:seashell"></td><td>seashell</td><td>#fff5ee</td><td>255,245,238</td></tr><tr>
+															<td style="background:sienna"></td><td>sienna</td><td>#a0522d</td><td>160,82,45</td></tr><tr>
+															<td style="background:silver"></td><td>silver</td><td>#c0c0c0</td><td>192,192,192</td></tr><tr>
+															<td style="background:skyblue"></td><td>skyblue</td><td>#87ceeb</td><td>135,206,235</td></tr><tr>
+															<td style="background:slateblue"></td><td>slateblue</td><td>#6a5acd</td><td>106,90,205</td></tr><tr>
+															<td style="background:slategray"></td><td>slategray</td><td>#708090</td><td>112,128,144</td></tr><tr>
+															<td style="background:slategrey"></td><td>slategrey</td><td>#708090</td><td>112,128,144</td></tr><tr>
+															<td style="background:snow"></td><td>snow</td><td>#fffafa</td><td>255,250,250</td></tr><tr>
+															<td style="background:springgreen"></td><td>springgreen</td><td>#00ff7f</td><td>0,255,127</td></tr><tr>
+															<td style="background:steelblue"></td><td>steelblue</td><td>#4682b4</td><td>70,130,180</td></tr><tr>
+															<td style="background:tan"></td><td>tan</td><td>#d2b48c</td><td>210,180,140</td></tr><tr>
+															<td style="background:teal"></td><td>teal</td><td>#008080</td><td>0,128,128</td></tr><tr>
+															<td style="background:thistle"></td><td>thistle</td><td>#d8bfd8</td><td>216,191,216</td></tr><tr>
+															<td style="background:tomato"></td><td>tomato</td><td>#ff6347</td><td>255,99,71</td></tr><tr>
+															<td style="background:turquoise"></td><td>turquoise</td><td>#40e0d0</td><td>64,224,208</td></tr><tr>
+															<td style="background:violet"></td><td>violet</td><td>#ee82ee</td><td>238,130,238</td></tr><tr>
+															<td style="background:wheat"></td><td>wheat</td><td>#f5deb3</td><td>245,222,179</td></tr><tr>
+															<td style="background:white"></td><td>white</td><td>#ffffff</td><td>255,255,255</td></tr><tr>
+															<td style="background:whitesmoke"></td><td>whitesmoke</td><td>#f5f5f5</td><td>245,245,245</td></tr><tr>
+															<td style="background:yellow"></td><td>yellow</td><td>#ffff00</td><td>255,255,0</td></tr><tr>
+															<td style="background:yellowgreen"></td><td>yellowgreen</td><td>#9acd32</td><td>154,205,50</td></tr>
+											          </tbody>
+											    </table>
+											</div>
+											<!--rgb-->
+											
+											
+										</div>
+										<br/><br/><br/><br/><br/>
+									</div>
+									<ul class="commends">
+										<li>
+											<a href="" title="我的标题册数">
+												<img src="./img/tj_img.jpg" />
+											</a>
+											<div class="cm_info">
+												<div class="ci_tit">
+													<a href="">我的标题册数</a>
+													<span>1天前</span>
+													<div class="clearfix"></div>
+												</div>
+												<p>四地方很多这样写代码，多酷啊...</p>
+											</div>
+										</li>
+										<li class="marl20">
+											<a href="" title="我的标题册数">
+												<img src="./img/tj_img.jpg" />
+											</a>
+											<div class="cm_info">
+												<div class="ci_tit">
+													<a href="">我的标题册数</a>
+													<span>1天前</span>
+													<div class="clearfix"></div>
+												</div>
+												<p>我想这样写代的双斯蒂芬各儿童...</p>
+											</div>
+										</li>
+										<li class="marl20">
+											<a href="" title="我的标题册数">
+												<img src="./img/tj_img.jpg" />
+											</a>
+											<div class="cm_info">
+												<div class="ci_tit">
+													<a href="">我的标题册数</a>
+													<span>1天前</span>
+													<div class="clearfix"></div>
+												</div>
+												<p>稍等为稍等是打发仨撒旦SDZSD阿斯达阿斯达...</p>
+											</div>
+										</li>
+										<li class="marl20">
+											<a href="" title="我的标题册数">
+												<img src="./img/tj_img.jpg" />
+											</a>
+											<div class="cm_info">
+												<div class="ci_tit">
+													<a href="">我的标题册数</a>
+													<span>1天前</span>
+													<div class="clearfix"></div>
+												</div>
+												<p>我想这样写代码，多酷啊，是吧...</p>
+											</div>
+										</li>
+										<div class="clearfix"></div>
+									</ul>
+								</div>
+								<div class="modb785"></div>
+							</div>
+						</div>
+						<div class="ls_l fr">
+							<div class="tools mod320">
+								<div class="modt320"></div>
+								<div class="modr320">
+									<div class="tools_a">
+										<a href="" class="tl1"><i></i>代码</a>
+										<a href="" class="tl2"><i></i>调试</a>
+										<a href="" class="tl3"><i></i>设置</a>
+										<a href="" class="tl4"><i></i>图表</a>
+										<a href="" class="tl5"><i></i>浏览器</a>
+										<a href="" class="tl6"><i></i>文本</a>
+										<a href="" class="tl7"><i></i>布局</a>
+										<a href="" class="tl8"><i></i>兼容</a>
+										<a href="" class="tl9"><i></i>拓展</a>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+								<div class="modb320"></div>
+							</div>
+							<div class="news mod320 mart15">
+								<div class="modt320"></div>
+								<div class="modr320">
+									<div class="modTit">
+										<h2><a href="" class="mtit">发布排行</a></h2>
+										<a href="" class="more">更多</a>
+										<div class="clearfix"></div>
+									</div>
+									<ul class="newsLi">
+										<li>
+											<a href="">当地法律根据苏丹分离</a>
+											<span>08-06</span>
+										</li>
+										<li>
+											<a href="">当地法律三个根据苏丹分离</a>
+											<span>08-06</span>
+										</li>
+										<li>
+											<a href="">三等功法律根据苏丹分离</a>
+											<span>08-06</span>
+										</li>
+										<li>
+											<a href="">飞过海法律根据苏丹分离</a>
+											<span>08-06</span>
+										</li>
+										<li>
+											<a href="">如图东风股份过户法律根据苏丹分离</a>
+											<span>08-06</span>
+										</li>
+										<li>
+											<a href="">乳突炎突然法律根据苏丹分离</a>
+											<span>08-06</span>
+										</li>
+										<li>
+											<a href="">律根据苏丹分离</a>
+											<span>08-06</span>
+										</li>
+									</ul>
+								</div>
+								<div class="modb320"></div>
+							</div>
+							<div class="news mod320 mart12">
+								<div class="modt320"></div>
+								<div class="modr320">
+									<div class="modTit">
+										<h2><a href="" class="mtit">热度排行</a></h2>
+										<a href="" class="more">更多</a>
+										<div class="clearfix"></div>
+									</div>
+									<ul class="newsLi">
+										<li>
+											<a href="">当地法律根据苏丹分离</a>
+											<span>08-06</span>
+										</li>
+										<li>
+											<a href="">当地法律三个根据苏丹分离</a>
+											<span>08-06</span>
+										</li>
+										<li>
+											<a href="">三等功法律根据苏丹分离</a>
+											<span>08-06</span>
+										</li>
+										<li>
+											<a href="">飞过海法律根据苏丹分离</a>
+											<span>08-06</span>
+										</li>
+										<li>
+											<a href="">如图东风股份过户法律根据苏丹分离</a>
+											<span>08-06</span>
+										</li>
+										<li>
+											<a href="">乳突炎突然法律根据苏丹分离</a>
+											<span>08-06</span>
+										</li>
+										<li>
+											<a href="">律根据苏丹分离</a>
+											<span>08-06</span>
+										</li>
+									</ul>
+								</div>
+								<div class="modb320"></div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+
+				</div>
+			</div>
+			<div id="footer">
+				<div class="mwarp">
+					<div class="bottom_link fl">
+						<ul class="yqlj">
+							<li>
+								<a href="">叶枫酒吧</a>
+							</li>
+							<li>
+								<a href="">叶枫酒吧</a>
+							</li>
+							<li>
+								<a href="">叶枫酒吧</a>
+							</li>
+							<li>
+								<a href="">叶枫酒吧</a>
+							</li>
+							<div class="clearfix"></div>
+						</ul>
+						<p>© 叶枫酒吧前端开发工作室 2014 All Rights Reserved. 京ICP备14061620号</p>
+					</div>
+					<div class="siteInfo fr">
+						二维码
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div id="sideBar">
+				<a href="" class="slogo"></a>
+				<a href="" class="sbook"></a>
+				<a href="" class="sqq"></a>
+				<a href="" class="top"></a>
+			</div>
+		</div>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="../../js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/base.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/logFn.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			Hcq.conf({
+				pageType: 'findpass',
+				flash: true
+			});
+			var __sid = 10;
+			$(function(){
+				var $input = $('#rgba-container input'),
+					$r  = $input.eq(0),
+					$g  = $input.eq(1),
+					$b  = $input.eq(2),
+					$a  = $input.eq(3),
+					$16 = $input.eq(4),
+					$v  = $('#rgba-preview-box'),
+					
+					pad = function(char){
+						if( char.length == 1 ){
+							return '0' + char;	
+						}
+						return char;
+					};
+					
+					$input.on('keyup change', function(){
+						if( this == $16.get(0)){
+							return;
+						}
+						this.value = this.value.replace(/\D/g, '').substr(0, 3);
+						if(this.value.length > 1){
+							this.value = this.value.replace(/^0+/g, '');	
+						}
+						if(this.value > 255){
+							this.value = this.value.substr(0, 2);
+						}
+						
+						if(this.value !== ''){
+							var arr = [];
+							arr.push( pad(parseInt($r.val(), 10).toString(16) ));
+							arr.push( pad(parseInt($g.val(), 10).toString(16) ));
+							arr.push( pad(parseInt($b.val(), 10).toString(16) ));
+							if($a.val() !== ''){
+								arr.push( pad(parseInt($a.val(), 10).toString(16) ));	
+							}
+							$16.val('#' + arr.join('').toUpperCase());
+							$v.css("background-color", $16.val().substr(0, 7));
+							if( $a.val() !== ''){
+								$v.css("opacity", $a.val() * 100/255/100);	
+							}
+						}else{
+							$v.css("background-color", "transparent");
+						}
+						
+					});
+					
+					$16.on('keyup change', function(){
+						if(this.value == '' || this.value.charAt(0) != '#'){
+							this.value = '#' + this.value;	
+						}
+						this.value = this.value.replace(/[^0-9a-fA-F#]/g, '').substring(0, 9);
+						var val = this.value.replace(/^#/, ''), len = val.length;
+						if(len == 3){
+							val = val.split('');
+							$r.val(parseInt(val[0], 16));
+							$g.val(parseInt(val[1], 16));
+							$b.val(parseInt(val[2], 16));
+							$a.val('');
+							$v.css("background-color", $16.val().substr(0, 7));
+							if( $a.val() !== ''){
+								$v.css("opacity", $a.val() * 100/255/100);	
+							}
+						}else if( len == 6 || len == 8 ){
+							val = val.split('');
+							$r.val(parseInt(val[0], 16) * 16 + parseInt(val[1], 16));
+							$g.val(parseInt(val[2], 16) * 16 + parseInt(val[3], 16));
+							$b.val(parseInt(val[4], 16) * 16 + parseInt(val[5], 16));	
+							if( len == 8 ){
+								$a.val(parseInt(val[6], 16) * 16 + parseInt(val[7], 16));	
+							}else{
+								$a.val('');		
+							}
+							$v.css("background-color", $16.val().substr(0, 7));
+							if( $a.val() !== ''){
+								$v.css("opacity", $a.val() * 100/255/100);	
+							}
+						}else{
+							$a.val('');
+							$v.css("background-color", "transparent");	
+						}
+					});
+			});
+		</script>
+</body></html>

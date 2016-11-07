@@ -3,15 +3,16 @@
  * date:2016-10-9 11:05
  * version:0.1.0
  * */
-;(function($,Dom){
+;(function($){
 	Hcq = window.Hcq || {};
-	Hcq.default = {};
+	Hcq.logFn = window.Hcq.logFn || {};
+	Hcq.defaults = {};
 	/**
 	 * conf
 	 * @param options //配置参数
 	 * */
 	Hcq.conf = function(options){
-		$.extend(true, Hcq.default, options);
+		$.extend(true, Hcq.defaults, options);
 		Hcq.init()
 	}
 	/**
@@ -19,7 +20,7 @@
 	 * @param init //初始化
 	 * */
 	Hcq.init = function(){
-		switch (Hcq.default.pageType){
+		switch (Hcq.defaults.pageType){
 			case 'index':Hcq.pt_index();
 				break;
 			case 'findpass':Hcq.pt_fpass();
@@ -53,35 +54,15 @@
 					layer.alert('检测到您的账号还未激活，登录邮箱查看激活邮件，请尽快激活账号以保证账号安全和真实性！如已激活请忽略！',{title:'账号激活'})
 				}
 			}
-			$('#header .log').html('<span class="user_top_name" style="cursor:pointer" title="进入个人中心">欢迎：'+uName+'</span> <a href="javascript:;">[退出]</a>');
+			$('#header .log').html('<span class="user_top_name" style="cursor:pointer" title="进入个人中心">欢迎：<a href="/ocenter/index.php?s=/ucenter/index/index.html" target="_blank">'+uName+'</a></span> <a href="javascript:;" class="logout">[退出]</a>');
 			$('#user_name').html(uName);
 			$('.warp').removeClass('blur');
 			$('#header .log a').unbind('click');
-			$('#header .log a').bind('click',function(){
+			$('#header .log .logout').bind('click',function(){
 				logouts();
 				Hcq.logFn.logout()
-			})
-			$('#header .log .user_top_name').bind('click',function(){
-				var params = 'width=1366' +
-				',height=768' +
-				',top=0' +
-				',left=0' +
-				',location=0' //是否显示地址字段。默认是 1
-				+
-				',menubar=0' //是否显示菜单栏。默认是 1
-				+
-				',resizable=0' //窗口是否可调节尺寸。默认是 1
-				+
-				',scrollbars=1' //是否显示滚动条。默认是 1
-				+
-				',status=1' //是否添加状态栏。默认是 1
-				+
-				',titlebar=1' //默认是 1
-				+
-				',toolbar=0';
-				window.open('http://www.yefengbar.com/mySite/userCenter.html', '', params);
 			});
-			
+			Hcq.logFn.close()
 		}
 		$('#header .log a').bind('click',function(){
 			Hcq.logFn.open(logCallback);
@@ -90,8 +71,8 @@
 		});
 		//logouts
 		function logouts(){
-			$('#header .log').html('<a href="javascript:;">登录 | 注册</a>');
-			$('#header .log a').bind('click',function(e){
+			$('#header .log').html('<a href="javascript:;" class="showLog">登录 | 注册</a>');
+			$('#header .log .showLog').bind('click',function(e){
 				//alert(e.target);
 				Hcq.logFn.open(logCallback);
 				Hcq.logFn.toggleUi(0);
@@ -122,33 +103,14 @@
 	 ***/
 	
 	Hcq.logCallback = function (uName){
-		$('#header .log').html('<span class="user_top_name" style="cursor:pointer" title="进入个人中心">欢迎：'+uName+'</span> <a href="javascript:;">[退出]</a>');
+		$('#header .log').html('欢迎：<a href="/ocenter/index.php?s=/ucenter/index/index.html" target="_blank">'+uName+'</a> <a href="javascript:;" class="logout">[退出]</a>');
 		$('#user_name').html(uName);
 		$('.warp').removeClass('blur');
 		$('#header .log a').unbind('click');
-		$('#header .log a').bind('click',function(){
+		$('#header .log .logout').bind('click',function(){
 			Hcq.logFn.logout('1');
-		})
-			$('#header .log .user_top_name').bind('click',function(){
-				var params = 'width=1366' +
-				',height=768' +
-				',top=0' +
-				',left=0' +
-				',location=0' //是否显示地址字段。默认是 1
-				+
-				',menubar=0' //是否显示菜单栏。默认是 1
-				+
-				',resizable=0' //窗口是否可调节尺寸。默认是 1
-				+
-				',scrollbars=1' //是否显示滚动条。默认是 1
-				+
-				',status=1' //是否添加状态栏。默认是 1
-				+
-				',titlebar=1' //默认是 1
-				+
-				',toolbar=0';
-				window.open('http://www.yefengbar.com/mySite/userCenter.html', '', params);
-			});
+		});
+		Hcq.logFn.close()
 	}
 	/**
 	 * pt_fpass
@@ -352,4 +314,4 @@
             });
         });
 	}
-})(jQuery,window)
+})(jQuery);
